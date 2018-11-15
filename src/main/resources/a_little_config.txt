@@ -1,5 +1,5 @@
 # config
-jdbcUrl = jdbc:mysql://localhost/managementsystem?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
-user = root
-password =root
+jdbcUrl = jdbc:mysql://132.232.111.89/managementsystem?characterEncoding=utf8&useSSL=false&zeroDateTimeBehavior=convertToNull
+user = wzw
+password =wzwwzw
 devMode = true
