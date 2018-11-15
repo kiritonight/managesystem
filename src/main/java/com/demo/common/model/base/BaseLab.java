@@ -41,4 +41,12 @@ public abstract class BaseLab<M extends BaseLab<M>> extends Model<M> implements 
 		return getStr("lab_intro");
 	}
 
+	public void setLabWeb(java.lang.String labWeb) {
+		set("lab_web", labWeb);
+	}
+	
+	public java.lang.String getLabWeb() {
+		return getStr("lab_web");
+	}
+
 }
