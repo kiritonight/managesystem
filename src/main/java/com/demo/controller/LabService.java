@@ -47,4 +47,7 @@ public class LabService {
             return false;
         }
     }
+    public Page<Lab> paginate(int pageNumber, int pageSize) {
+        return dao.paginate(pageNumber, pageSize, "select *", "from t_lab order by lab_id asc");
+    }
 }
