@@ -17,7 +17,8 @@ public class LabController extends Controller {
     LabService labService;
 
     public void index(){
-        renderText("OMG");
+       setAttr("labpage",labService.paginate(getParaToInt(0,1),10));
+       render("lab.html");
     }
 
     public void add(){
@@ -31,7 +32,8 @@ public class LabController extends Controller {
     }
 
     public void save(){
-
+         getBean(Lab.class).save();
+         redirect("/lab");
     }
 
     public void delete(){
@@ -40,7 +42,10 @@ public class LabController extends Controller {
         labService.deleteById(id);
         redirect("/lab");
     }
-
+    public void edit()
+    {
+        setAttr("lab",labService.findById(getParaToInt()));
+    }
     //
     public void update(){
        String lab_id = getPara("lab_id");
@@ -48,9 +53,7 @@ public class LabController extends Controller {
         String lab_place = getPara("lab_place");
         String lab_intro = getPara("lab_intro");
         String lab_web = getPara("lab_web");
-        if(labService.updateById(lab_id, lab_name, lab_place, lab_intro, lab_web)) {
-            System.out.println("更新成功");
-        }
+
         redirect("/lab");
     }
 
