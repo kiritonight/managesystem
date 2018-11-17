@@ -37,7 +37,8 @@ public class LabController extends Controller {
     }
 
     public void delete(){
-        int id = getParaToInt("lab_id");
+//        int id = getParaToInt("lab_id");
+        int id = getParaToInt();
         System.err.println(id);
         labService.deleteById(id);
         redirect("/lab");
