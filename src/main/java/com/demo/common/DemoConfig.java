@@ -1,6 +1,7 @@
 package com.demo.common;
 
 import com.demo.common.model._MappingKit;
+import com.demo.controller.LabController;
 import com.demo.index.IndexController;
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -52,6 +53,7 @@ public class DemoConfig extends JFinalConfig {
 	public void configRoute(Routes me) {
 		me.add("/", IndexController.class, "/index");	// 第三个参数为该Controller的视图存放路径
 
+		me.add("/lab", LabController.class);
 	}
 	
 	public void configEngine(Engine me) {
