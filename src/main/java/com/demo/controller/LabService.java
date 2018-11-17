@@ -20,7 +20,7 @@ public class LabService {
 
     public boolean deleteById(int id){
         try{
-            String sql = "DELETE * FROM t_lab WHERE lib_id=?";
+            String sql = "DELETE FROM t_lab WHERE lab_id=?";
             int iRet = Db.update(sql, id);
             if(iRet>0){
                 return true;
