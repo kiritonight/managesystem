@@ -9,12 +9,12 @@ import com.jfinal.plugin.activerecord.IBean;
 @SuppressWarnings("serial")
 public abstract class BaseLab<M extends BaseLab<M>> extends Model<M> implements IBean {
 
-	public void setLabId(java.lang.Integer labId) {
+	public void setLabId(java.lang.Long labId) {
 		set("lab_id", labId);
 	}
 	
-	public java.lang.Integer getLabId() {
-		return getInt("lab_id");
+	public java.lang.Long getLabId() {
+		return getLong("lab_id");
 	}
 
 	public void setLabName(java.lang.String labName) {
@@ -39,6 +39,14 @@ public abstract class BaseLab<M extends BaseLab<M>> extends Model<M> implements 
 	
 	public java.lang.String getLabIntro() {
 		return getStr("lab_intro");
+	}
+
+	public void setLabWeb(java.lang.String labWeb) {
+		set("lab_web", labWeb);
+	}
+	
+	public java.lang.String getLabWeb() {
+		return getStr("lab_web");
 	}
 
 }
