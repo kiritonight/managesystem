@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<fieldset class="solid">
+    <legend>创建实验室信息</legend>
+    <input type="hidden" name="lab.id" value="#(lab.id??)" />
+    <div>
+        <label>实验室名称</label>
+        <input type="text" name="lab.name" value="#(lab.name??)" />#(titleMsg)
+    </div>
+    <div>
+        <label>实验室地址</label>
+        <input type="text" name="lab.place" value="#(lab.place??)"/>
+    </div>
+    <div>
+        <label>实验室简介</label>
+        <textarea name="lab.intro" cols="80" rows="10">#(lab.intro??)</textarea>#(introMsg)
+    </div>
+    <div>
+        <label>实验网站</label>
+        <a href="lab.web" target="_blank"></a>
+    </div>
+    <div>
+        <label>&nbsp;</label>
+        <input value="提交" type="submit" >
+    </div>
+</fieldset>
