@@ -22,18 +22,18 @@ public class LabController extends Controller {
     }
 
     public void add(){
-        String lab_id = getPara("lab_id");
-        String lab_name = getPara("lab_name");
-        String lab_place = getPara("lab_place");
-        String lab_intro = getPara("lab_intro");
-        String lab_web = getPara("lab_web");
-        labService.add(lab_id, lab_name, lab_place, lab_intro, lab_web);
-        redirect("/lab");
+       render("add.html");
     }
 
     public void save(){
-         getBean(Lab.class).save();
-         redirect("/lab");
+        getBean(Lab.class).save();
+//        String lab_id = getPara("lab_id");
+//        String lab_name = getPara("lab_name");
+//        String lab_place = getPara("lab_place");
+//        String lab_intro = getPara("lab_intro");
+//        String lab_web = getPara("lab_web");
+//        labService.add(lab_id, lab_name, lab_place, lab_intro, lab_web);
+        redirect("/lab");
     }
 
     public void delete(){
@@ -43,8 +43,7 @@ public class LabController extends Controller {
         labService.deleteById(id);
         redirect("/lab");
     }
-    public void edit()
-    {
+    public void edit() {
         setAttr("lab",labService.findById(getParaToInt()));
     }
     //
@@ -54,7 +53,7 @@ public class LabController extends Controller {
         String lab_place = getPara("lab_place");
         String lab_intro = getPara("lab_intro");
         String lab_web = getPara("lab_web");
-
+        labService.updateById(lab_id, lab_name, lab_place, lab_intro, lab_web);
         redirect("/lab");
     }
 
