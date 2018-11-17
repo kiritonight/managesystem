@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实验室</title>
+    <link href="/css/manage.css" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+    body{
+
+    }
+        div{
+            background: #0099CC;
+        }
+    </style>
+</head>
+<body>
+<h1>实验室管理&nbsp;&nbsp;
+    <a href="lab/add">添加实验室</a>
+</h1>
+
+<div class="top_box" >
+    <table>
+        <tbody>
+    <tr>
+        <th width="10%">ID</th>
+        <th width="20%">名称</th>
+        <th width="20%">位置</th>
+        <th width="25%">基本信息</th>
+        <th width="15%">网址</th>
+        <th width="15%">操作</th>
+    </tr>
+        #for(x : labpage.getList())
+    <tr>
+       <td style="text-align:left"> #(x.lab_id) </td>
+       <td style="text-align:left"> #(x.lab_name) </td>
+       <td style="text-align:left"> #(x.lab_place) </td>
+        <td style="text-align:left"> #(x.lab_intro) </td>
+        <td style="text-align:left"> #(x.lab_web) </td>
+        <td style="text-align:left">
+            <a href="lab/edit/#(x.lab_id)">修改</a>&nbsp;&nbsp;
+            <a href="lab/delete/#(x.lab_id)">删除</a>
+        </td>
+    </tr>
+        </tbody>
+        #end
+    </table>
+</div>
+
+</body>
+</html>
+
